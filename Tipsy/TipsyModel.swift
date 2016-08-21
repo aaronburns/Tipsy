@@ -58,6 +58,7 @@ class TipsyModel {
     init(billAmount: Double, tipPercent: Int, splitNum: Int) {
         self._billAmount = billAmount
         self._tipPercent = tipPercent
+        self._splitNum = splitNum
     }
     
     func calculateTip() {
