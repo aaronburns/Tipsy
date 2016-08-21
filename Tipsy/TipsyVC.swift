@@ -43,12 +43,13 @@ class TipsyVC: UIViewController {
         calcTip()
     }
     
+    //changes the tip percentage lable based on the slider value
     @IBAction func tipPercentChanges(_ sender: AnyObject) {
         tipPercentValue()
         calcTip()
-        //updateUI()
     }
     
+    //changes the number next to the split slider
     @IBAction func splitNumChanges(_ sender: AnyObject) {
         splitNumValue()
         calcTip()

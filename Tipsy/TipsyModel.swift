@@ -11,11 +11,13 @@ import Foundation
 class TipsyModel {
     
     private var _billAmount = 0.0
+    
+    //changed tipPercent to an Int so that tip and total amounts don't change based on the float value of the slider
     private var _tipPercent = 0
     private var _tipAmount = 0.0
     private var _totalAmount = 0.0
     
-    //second slider set
+    //private variables for the slider set
     private var _splitNum = 0
     private var _eachAmount = 0.0
     
@@ -43,6 +45,7 @@ class TipsyModel {
         return _totalAmount
     }
     
+    //two split slider variables
     var splitNum: Int {
         get {
             return _splitNum
@@ -55,6 +58,7 @@ class TipsyModel {
         return _eachAmount
     }
     
+    //tipPercent should be an Int instead of the Double that was set in the tutorials
     init(billAmount: Double, tipPercent: Int, splitNum: Int) {
         self._billAmount = billAmount
         self._tipPercent = tipPercent
@@ -62,6 +66,7 @@ class TipsyModel {
     }
     
     func calculateTip() {
+        //casting the tipPercent from Int to Double and dividing by 100 to turn it into a decimal (this must also be changed in the slider attributes in the storyboard.
         _tipAmount = billAmount * (Double(tipPercent) / 100)
         _totalAmount = tipAmount + billAmount
         _eachAmount = totalAmount / Double(splitNum)
